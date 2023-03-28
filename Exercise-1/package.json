@@ -1,0 +1,16 @@
+{
+  "name": "exercise-1-colorpalatte",
+  "version": "1.0.0",
+  "description": "Exercise -1 Color Palatte",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sujitha",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.22",
+    "random-array-subset": "^1.0.2",
+    "random-item": "^4.0.1"
+  }
+}
