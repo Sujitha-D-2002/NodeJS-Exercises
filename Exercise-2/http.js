@@ -4,7 +4,7 @@ let fs = require('fs');
 
 http.createServer((req, res, err) => {
     if (req.url != "/favicon.ico") {
-        console.log("Server get started in port number 3000..!!");
+        console.log("Server get started in port number 3200..!!");
 
         //Store the attached `color_ palette.json` in your filesystem
         let colorCodeFile = "./color_ palette.json";
@@ -19,7 +19,9 @@ http.createServer((req, res, err) => {
             }
             return arrayColorPalette;
         }
-        res.write(JSON.stringify(randomColorCodes.slice(0, 5)));
+        const json_data = JSON.stringify((randomColorCodes.slice(0, 5)));
+        res.setHeader('Content-Type', 'application/json');
+        res.write(json_data);
     }
     res.end();
-}).listen(3000);
+}).listen(3200);
