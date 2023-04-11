@@ -1,0 +1,49 @@
+    error: Mar-30-2023 10:14:53: 	500 - undefined - ENOENT: no such file or directory, open './cdw_ace23_buddies.json' - /display/104 - GET - ::ffff:127.0.0.1
+error: Mar-30-2023 10:16:22: 	500 - undefined - ENOENT: no such file or directory, open './cdw_ace23_buddies.json' - /display/104 - GET - ::ffff:127.0.0.1
+error: Mar-30-2023 10:16:28: 	500 - undefined - ENOENT: no such file or directory, open './cdw_ace23_buddies.json' - /update/105 - PUT - ::ffff:127.0.0.1
+error: Mar-30-2023 10:16:32: 	500 - undefined - ENOENT: no such file or directory, open './cdw_ace23_buddies.json' - /delete/104 - DELETE - ::ffff:127.0.0.1
+error: Mar-30-2023 10:17:04: 	500 - undefined - ENOENT: no such file or directory, open './cdw_ace23_buddies.json' - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 10:29:24: 	500 - undefined - ENOENT: no such file or directory, open './cdw_ace23_buddies.json' - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 10:38:50: 	500 - undefined - ENOENT: no such file or directory, open './cdw_ace23_buddies.json' - /display/all - GET - ::ffff:127.0.0.1
+error: Mar-30-2023 10:41:25: 	500 - undefined - ENOENT: no such file or directory, open './cdw_ace23_budds.json' - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:05:20: 	500 - undefined - fs is not defined - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:05:46: 	500 - undefined - fs is not defined - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:07:21: 	500 - undefined - fs is not defined - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:08:29: 	500 - undefined - fs is not defined - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:15:02: 	500 - undefined - fs is not defined - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:16:15: 	500 - undefined - fs is not defined - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:17:21: 	500 - undefined - body is not defined - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:18:06: 	500 - undefined - body is not defined - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:18:55: 	500 - undefined - body is not defined - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:19:45: 	500 - undefined - Cannot read properties of undefined (reading 'body') - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:20:42: 	500 - undefined - Cannot read properties of undefined (reading 'body') - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Mar-30-2023 12:25:01: 	500 - undefined - body is not defined - /add/addbuddy - POST - ::ffff:127.0.0.1
+error: Apr-06-2023 11:00:57: 	500 - undefined - filePath is not defined - /buddy/update/108 - PUT - ::ffff:127.0.0.1
+error: Apr-06-2023 11:01:23: 	500 - OK - Cannot set headers after they are sent to the client - /buddy/display/104 - GET - ::ffff:127.0.0.1
+error: Apr-06-2023 11:16:03: 	500 - undefined - filePath is not defined - /buddy/delete/104 - DELETE - ::ffff:127.0.0.1
+error: Apr-06-2023 11:16:12: 	500 - undefined - filePath is not defined - /buddy/delete/all - DELETE - ::ffff:127.0.0.1
+error: Apr-06-2023 11:16:35: 	500 - undefined - filePath is not defined - /buddy/delete/104 - DELETE - ::ffff:127.0.0.1
+error: Apr-06-2023 11:16:43: 	500 - undefined - filePath is not defined - /buddy/update/108 - PUT - ::ffff:127.0.0.1
+error: Apr-06-2023 11:16:51: 	500 - OK - Cannot set headers after they are sent to the client - /buddy/display/104 - GET - ::ffff:127.0.0.1
+error: Apr-06-2023 11:19:03: 	500 - undefined - filePath is not defined - /buddy/delete/104 - DELETE - ::ffff:127.0.0.1
+error: Apr-06-2023 11:19:16: 	500 - OK - Cannot set headers after they are sent to the client - /buddy/display/104 - GET - ::ffff:127.0.0.1
+error: Apr-06-2023 11:20:15: 	500 - undefined - filePath is not defined - /buddy/update/108 - PUT - ::ffff:127.0.0.1
+error: Apr-06-2023 11:20:25: 	500 - undefined - filePath is not defined - /buddy/delete/104 - DELETE - ::ffff:127.0.0.1
+error: Apr-06-2023 11:20:30: 	500 - undefined - filePath is not defined - /buddy/delete/all - DELETE - ::ffff:127.0.0.1
+error: Apr-06-2023 11:32:33: 	500 - undefined - filePath is not defined - /buddy/delete/104 - DELETE - ::ffff:127.0.0.1
+error: Apr-06-2023 14:30:11: 	500 - OK - Cannot set headers after they are sent to the client - /buddy/add/addbuddy - POST - ::ffff:127.0.0.1
+error: Apr-06-2023 14:47:35: 	500 - undefined - ENOENT: no such file or directory, open './cdw_ace23_buddi.json' - /buddy/display/all - GET - ::ffff:127.0.0.1
+error: Apr-07-2023 14:18:42: 	200 - [object Object],[object Object],[object Object],[object Object],[object Object],[object Object] - /buddy/ - ::ffff:127.0.0.1
+error: Apr-07-2023 14:32:27: 	404 - Buddy list not found..!!! - /buddy/100 - ::ffff:127.0.0.1
+error: Apr-07-2023 15:21:28: 	404 - Buddy list not found..!!! - /buddy/ - ::ffff:127.0.0.1
+error: Apr-07-2023 15:21:56: 	404 - Buddy list not found..!!! - /buddy/199 - ::ffff:127.0.0.1
+error: Apr-07-2023 15:21:57: 	404 - Buddy list not found..!!! - /buddy/199 - ::ffff:127.0.0.1
+error: Apr-07-2023 15:22:33: 	404 - Buddy list not found..!!! - /buddy/ - ::ffff:127.0.0.1
+error: Apr-07-2023 15:23:39: 	404 - Buddy list not found..!!! - /buddy/199 - ::ffff:127.0.0.1
+error: Apr-07-2023 15:23:40: 	404 - Buddy list not found..!!! - /buddy/199 - ::ffff:127.0.0.1
+error: Apr-07-2023 15:24:35: 	404 - Buddy list not found..!!! - /buddy/199 - ::ffff:127.0.0.1
+error: Apr-07-2023 15:26:02: 	404 - Buddy list not found..!!! - /buddy/206 - ::ffff:127.0.0.1
+error: Apr-07-2023 15:29:19: 	404 - Buddy list not found..!!! - /buddy/206 - ::ffff:127.0.0.1
+error: Apr-07-2023 15:29:41: 	404 - Buddy list not found..!!! - /buddy/104 - ::ffff:127.0.0.1
+error: Apr-07-2023 15:29:58: 	404 - Buddy list not found..!!! - /buddy/104 - ::ffff:127.0.0.1
+error: Apr-07-2023 15:32:09: 	404 - Buddy list not found..!!! ReferenceError: index is not defined - /buddy/104 - ::ffff:127.0.0.1
