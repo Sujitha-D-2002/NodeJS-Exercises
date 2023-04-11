@@ -14,6 +14,7 @@ const loggers =(loggerLevel, loggerPath) =>
     });
     const error_logger = loggers(process.env.ERROR_LEVEL, "./logs/error.log");
     const warn_logger = loggers(process.env.WARN_LEVEL, "./logs/warn.log");
+    const info_logger = loggers(process.env.INFO_LEVEL, "./logs/info.log");
     
     const logger = {
       error: (params) => {
@@ -21,6 +22,9 @@ const loggers =(loggerLevel, loggerPath) =>
       },
       warn: (params) => {
         return warn_logger.warn(params);
+      },
+      info: (params) => {
+        return info_logger.info(params);
       },
     };
     

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const logger = require('../utils/logger');
+
 //Read file
 const readFileData = function async(filePath) {
     return new Promise((resolve, reject) => {

@@ -2,9 +2,10 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 const cors = require('cors');
-require('dotenv').config()
-//buddylist
 let buddy = require('./routes/buddyRouter')
+let logger=require('./utils/logger')
+require('dotenv').config()
+
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -41,6 +42,6 @@ app.use('/', function (req, res) {
 })
 
 app.listen(process.env.PORT, function () {
-  console.log("Working on port number: " + process.env.PORT);
+  logger.info(`${"Working on port number: " + process.env.PORT}`);
 })
 

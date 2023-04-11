@@ -1,25 +1,24 @@
-const { writeFileData, readFileData } = require('../utils/buddyUtils');
+const { writeFileData, readFileData } = require('../utils/fileOperationUtils');
+const httpResponse = require('../utils/httpResponsesUtil')
+const { RESPONSE_MESSAGES } = require("../config/constants");
+
 
 //Create Buddy Details
 let createBuddyList = async (req) => {
 
   try {
     const fileData = JSON.parse(await readFileData('./cdw_ace23_buddies.json'));
-    let res;
     fileData.push(req.body);
     let status = await writeFileData('./cdw_ace23_buddies.json', fileData);
     if (status == "false") {
-      res = { status: 404, message: "File Not Found to create new buddy list" }
-      return res;
+      return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
     }
     else {
-      res = { status: 201, message: "Buddy Details successfully added..!!!" }
-      return res;
+      return httpResponse.httpSuccessResponse(RESPONSE_MESSAGES.BUDDY_CREATED_MSG);
     }
   }
   catch (err) {
-    res = { status: 404, message: "Buddy list not found..!!!"+err }
-    return res;
+    return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
   }
 
 }
@@ -27,26 +26,21 @@ let createBuddyList = async (req) => {
 //Display All Buddy Details
 const displayAllBuddyServices = async () => {
   try {
-    let res;
     const data = JSON.parse(await readFileData('./cdw_ace23_buddies.json'));
     if (data == "false") {
-      res = { status: 500, message: "File Not Found. Cannot display the buddy list..!!" }
-      return res;
+      return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
     }
     else {
       if (data.length == 0) {
-        res = { status: 204, message: "No records found in cdw buddy list json file" }
-        return res;
+        return httpResponse.httpNoDataFoundResponse();
       }
       else {
-        res = { status: 200, message: data }
-        return res;
+        return httpResponse.httpSuccessResponse(RESPONSE_MESSAGES.SUCCESS_MSG, data);
       }
     }
   }
   catch (err) {
-    res = { status: 404, message: "Buddy list not found..!!!"+err }
-    return res;
+    return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
   }
 
 }
@@ -54,37 +48,31 @@ const displayAllBuddyServices = async () => {
 //Display Specific Buddy Details
 const displayParticularBuddyServices = async (req) => {
   try {
-    let res;
     const fileData = JSON.parse(await readFileData('./cdw_ace23_buddies.json'));
     let data = fileData.find(temp => {
       return temp.empId === req.params.id;
     });
     if (data == undefined) {
-      res = { status: 204, message: "Record of buddy list not found" }
-      return res;
+      return httpResponse.httpNoDataFoundResponse();
     }
     else {
-      res = { status: 200, message: data }
-      return res;
+      return httpResponse.httpSuccessResponse(RESPONSE_MESSAGES.SUCCESS_MSG, data);
     }
   }
   catch (err) {
-    res = { status: 404, message: "Buddy list not found..!!! "+err }
-    return res;
+    return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
   }
 }
 
 //Update Buddy Details
 let updateBuddyService = async (req) => {
   try {
-    let res;
     const fileData = JSON.parse(await readFileData('./cdw_ace23_buddies.json'));
     let index = fileData.findIndex(temp => {
       return temp.empId === req.params.id;
     });
     if (index == -1) {
-      res = { status: 204, message: "Record of buddy list not found" }
-      return res;
+      return httpResponse.httpNoDataFoundResponse();
     }
     else {
       fileData[index].nickName = req.body.nickName || fileData[index].nickName,
@@ -93,46 +81,38 @@ let updateBuddyService = async (req) => {
         fileData[index].dob = req.body.dob || fileData[index].dob
       let status = await writeFileData('./cdw_ace23_buddies.json', fileData);
       if (status == "false") {
-        res = { status: 404, message: "File Not Found. Cannot update the buddy list..!!" }
-        return res;
+        return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
       }
       else {
-        res = { status: 200, message: "Employee updated successfully" }
-        return res;
+        return httpResponse.httpSuccessResponse(RESPONSE_MESSAGES.BUDDY_UPDATED_MSG);
       }
     }
   }
   catch (err) {
-    res = { status: 404, message: "Buddy list not found..!!!"+err }
-    return res;
+    return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
   }
 
 }
 //Delete All Buddy Details
 let deleteAllBuddyService = async () => {
   try {
-    let res;
     const fileData = JSON.parse(await readFileData('./cdw_ace23_buddies.json'));
     if (fileData.length == 0) {
-      res = { status: 404, message: "No records found in cdw buddy list json file to delete" }
-      return res;
+      return httpResponse.httpNoDataFoundResponse();
     }
     else {
       fileData.splice(0);
       let status = await writeFileData('./cdw_ace23_buddies.json', fileData);
       if (status == "false") {
-        res = { status: 404, message: "File Not Found to delete buddy list" }
-        return res;
+        return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
       }
       else {
-        res = { status: 200, message: "Employee deleted successfully" }
-        return res;
+        return httpResponse.httpSuccessResponse(RESPONSE_MESSAGES.BUDDY_DELETED_MSG);
       }
     }
   }
   catch (err) {
-    res = { status: 404, message: "Buddy list not found..!!!"+err}
-    return res;
+    return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
   }
 }
 
@@ -142,34 +122,28 @@ let deleteParticularBuddyService = async (req) => {
     const fileData = JSON.parse(await readFileData('./cdw_ace23_buddies.json'));
     let length = fileData.length;
     if (length == 0) {
-      res = { status: 204, message: "No records found in cdw buddy list json file to delete" }
-      return res;
+      return httpResponse.httpNoDataFoundResponse();
     }
     else {
       data = fileData.filter(temp =>
         !(temp.empId === req.params.id)
       );
-      console.log(data)
       if (length != data.length) {
         let status = await writeFileData('./cdw_ace23_buddies.json', data);
         if (status == "false") {
-          res = { status: 404, message: "File Not Found to delete buddy list" }
-          return res;
+          return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
         }
         else {
-          res = { status: 200, message: "Employee deleted successfully" }
-          return res;
+          return httpResponse.httpSuccessResponse(RESPONSE_MESSAGES.BUDDY_DELETED_MSG);
         }
       }
       else {
-        res = { status: 204, message: "Buddy record not found" }
-        return res;
+        return httpResponse.httpNoDataFoundResponse();
       }
     }
   }
   catch (err) {
-    res = { status: 404, message: "Buddy list not found..!!!"+err }
-    return res;
+    return httpResponse.httpNotFoundResponse(RESPONSE_MESSAGES.NOT_FOUND_MSG);
   }
 }
 module.exports = { createBuddyList, displayAllBuddyServices, displayParticularBuddyServices, updateBuddyService, deleteAllBuddyService, deleteParticularBuddyService }
